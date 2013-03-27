@@ -24,7 +24,7 @@ enum
 @interface EPSSampler ()
 
 @property (readwrite) Float64 graphSampleRate;
-@property (readwrite) AUGraph processingGraph;
+@property (nonatomic, readwrite) AUGraph processingGraph;
 @property (readwrite) AudioUnit samplerUnit;
 @property (readwrite) AudioUnit ioUnit;
 
@@ -88,6 +88,10 @@ logTheError:
 	{
 		NSLog(@"Unable to stop playing the low note. Error code: %d '%.4s'\n", (int)result, (const char *)&result);
 	}
+}
+
+- (AUGraph)processingGraph {
+	return _processingGraph;
 }
 
 #pragma mark - Private Methods

@@ -14,4 +14,6 @@
 - (void)startPlayingNote:(UInt32)note withVelocity:(double)velocity;
 - (void)stopPlayingNote:(UInt32)note;
 
+- (AUGraph)processingGraph;
+
 @end
